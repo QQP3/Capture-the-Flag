@@ -1,0 +1,228 @@
+[gd_scene load_steps=16 format=3 uid="uid://cgu1w8g53j0pe"]
+
+[ext_resource type="Texture2D" uid="uid://mmy6wbil3d1q" path="res://Assets/photos/RedCircleBlank.png" id="1_kwvlw"]
+[ext_resource type="Script" uid="uid://557skdjnjbkk" path="res://Assets/Scripts/Piece.gd" id="2_6jskf"]
+[ext_resource type="Texture2D" uid="uid://banenv6kdnfx6" path="res://Assets/photos/RedCircle0.png" id="2_8u7ev"]
+[ext_resource type="Texture2D" uid="uid://1g5x2qdlw74t" path="res://Assets/photos/RedCircle1.png" id="2_h84dr"]
+[ext_resource type="Texture2D" uid="uid://bvise12387iyq" path="res://Assets/photos/RedCircle2.png" id="4_oedab"]
+[ext_resource type="Texture2D" uid="uid://b5fpv6awwltyp" path="res://Assets/photos/RedCircle3.png" id="5_1wilk"]
+[ext_resource type="Texture2D" uid="uid://6lb4jgm2iv4s" path="res://Assets/photos/RedCircle4.png" id="6_ml3ol"]
+[ext_resource type="Texture2D" uid="uid://bkxctcrmnd3lk" path="res://Assets/photos/RedCircle5.png" id="7_j7ond"]
+[ext_resource type="Texture2D" uid="uid://cyyg6syqe54qg" path="res://Assets/photos/RedCircle6.png" id="8_lhm66"]
+[ext_resource type="Texture2D" uid="uid://dpxpy6wehk5st" path="res://Assets/photos/RedCircle7.png" id="9_rx3pw"]
+[ext_resource type="Texture2D" uid="uid://ds6rabocprx7f" path="res://Assets/photos/RedCircle8.png" id="10_4jdwn"]
+[ext_resource type="Texture2D" uid="uid://dybnmd03gun1d" path="res://Assets/photos/RedCircle9.png" id="11_0ka0e"]
+[ext_resource type="Texture2D" uid="uid://h8xc27gpdgfh" path="res://Assets/photos/RedCircleB.png" id="12_vnmm1"]
+[ext_resource type="Texture2D" uid="uid://bh6i0e4hrhyah" path="res://Assets/photos/RedCircleF.png" id="13_j5dxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h84dr"]
+radius = 23.0
+
+[node name="RedPieces" type="Node2D"]
+position = Vector2(514, 189)
+
+[node name="BlankRed" type="Area2D" parent="."]
+position = Vector2(75, 150)
+script = ExtResource("2_6jskf")
+piece_id = -1
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="BlankRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_kwvlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlankRed"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="0Red" type="Area2D" parent="."]
+position = Vector2(100, 0)
+script = ExtResource("2_6jskf")
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="0Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_8u7ev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="0Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="1Red" type="Area2D" parent="."]
+position = Vector2(150, 0)
+script = ExtResource("2_6jskf")
+piece_id = 1
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="1Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_h84dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="2Red" type="Area2D" parent="."]
+position = Vector2(0, 50)
+script = ExtResource("2_6jskf")
+piece_id = 2
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="2Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("4_oedab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="3Red" type="Area2D" parent="."]
+position = Vector2(0, 100)
+script = ExtResource("2_6jskf")
+piece_id = 3
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="3Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("5_1wilk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="4Red" type="Area2D" parent="."]
+position = Vector2(50, 50)
+script = ExtResource("2_6jskf")
+piece_id = 4
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="4Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("6_ml3ol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="5Red" type="Area2D" parent="."]
+position = Vector2(100, 50)
+script = ExtResource("2_6jskf")
+piece_id = 5
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="5Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("7_j7ond")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="6Red" type="Area2D" parent="."]
+position = Vector2(150, 50)
+script = ExtResource("2_6jskf")
+piece_id = 6
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="6Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("8_lhm66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="7Red" type="Area2D" parent="."]
+position = Vector2(150, 100)
+script = ExtResource("2_6jskf")
+piece_id = 7
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="7Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("9_rx3pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="8Red" type="Area2D" parent="."]
+position = Vector2(100, 100)
+script = ExtResource("2_6jskf")
+piece_id = 8
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="8Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("10_4jdwn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="9Red" type="Area2D" parent="."]
+position = Vector2(50, 100)
+script = ExtResource("2_6jskf")
+piece_id = 9
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="9Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("11_0ka0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="9Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="BRed" type="Area2D" parent="."]
+position = Vector2(50, 0)
+script = ExtResource("2_6jskf")
+piece_id = 88
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="BRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("12_vnmm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BRed"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="FRed" type="Area2D" parent="."]
+script = ExtResource("2_6jskf")
+piece_id = 99
+team = 1
+
+[node name="TextureRect" type="TextureRect" parent="FRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("13_j5dxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FRed"]
+shape = SubResource("CircleShape2D_h84dr")

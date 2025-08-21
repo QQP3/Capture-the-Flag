@@ -1,0 +1,458 @@
+[gd_scene load_steps=34 format=3 uid="uid://cyucdifmttrj4"]
+
+[ext_resource type="Script" uid="uid://c3dx7juppjyv6" path="res://Assets/Scripts/main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://bah21u37uv2ft" path="res://Assets/Board.tscn" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://bfgpwc3dfvdnu" path="res://Assets/Scripts/board.gd" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://557skdjnjbkk" path="res://Assets/Scripts/Piece.gd" id="4_oye8v"]
+[ext_resource type="Texture2D" uid="uid://mmy6wbil3d1q" path="res://Assets/photos/RedCircleBlank.png" id="5_40n85"]
+[ext_resource type="Texture2D" uid="uid://banenv6kdnfx6" path="res://Assets/photos/RedCircle0.png" id="6_gb15f"]
+[ext_resource type="Texture2D" uid="uid://1g5x2qdlw74t" path="res://Assets/photos/RedCircle1.png" id="7_sph85"]
+[ext_resource type="Texture2D" uid="uid://bvise12387iyq" path="res://Assets/photos/RedCircle2.png" id="8_o7g6l"]
+[ext_resource type="Texture2D" uid="uid://b5fpv6awwltyp" path="res://Assets/photos/RedCircle3.png" id="9_vi5kq"]
+[ext_resource type="Texture2D" uid="uid://6lb4jgm2iv4s" path="res://Assets/photos/RedCircle4.png" id="10_5mkgo"]
+[ext_resource type="Texture2D" uid="uid://bkxctcrmnd3lk" path="res://Assets/photos/RedCircle5.png" id="11_3ccbu"]
+[ext_resource type="Texture2D" uid="uid://cyyg6syqe54qg" path="res://Assets/photos/RedCircle6.png" id="12_ny7u2"]
+[ext_resource type="Texture2D" uid="uid://dpxpy6wehk5st" path="res://Assets/photos/RedCircle7.png" id="13_x3yn0"]
+[ext_resource type="Texture2D" uid="uid://ds6rabocprx7f" path="res://Assets/photos/RedCircle8.png" id="14_1w2xm"]
+[ext_resource type="Texture2D" uid="uid://dybnmd03gun1d" path="res://Assets/photos/RedCircle9.png" id="15_gngx1"]
+[ext_resource type="Texture2D" uid="uid://h8xc27gpdgfh" path="res://Assets/photos/RedCircleB.png" id="16_jt61w"]
+[ext_resource type="Texture2D" uid="uid://bh6i0e4hrhyah" path="res://Assets/photos/RedCircleF.png" id="17_v8qla"]
+[ext_resource type="Texture2D" uid="uid://dfjetptwi5s2h" path="res://Assets/photos/BlueCircleBlank.png" id="18_y1tbi"]
+[ext_resource type="Texture2D" uid="uid://745llfpo78ra" path="res://Assets/photos/BlueCircle0.png" id="19_c2s76"]
+[ext_resource type="Texture2D" uid="uid://cbgs28vfh3in2" path="res://Assets/photos/BlueCircle1.png" id="20_f4ese"]
+[ext_resource type="Texture2D" uid="uid://m0ba3uqfxqem" path="res://Assets/photos/BlueCircle2.png" id="21_rchyr"]
+[ext_resource type="Texture2D" uid="uid://b0es3qkm5xnue" path="res://Assets/photos/BlueCircle3.png" id="22_pljue"]
+[ext_resource type="Texture2D" uid="uid://16w7m1hod3ao" path="res://Assets/photos/BlueCircle4.png" id="23_nx4yo"]
+[ext_resource type="Texture2D" uid="uid://cww86u3jtwk8w" path="res://Assets/photos/BlueCircle5.png" id="24_5tfui"]
+[ext_resource type="Texture2D" uid="uid://b4b13xqghsmit" path="res://Assets/photos/BlueCircle6.png" id="25_38apo"]
+[ext_resource type="Texture2D" uid="uid://0qed2ey1eyll" path="res://Assets/photos/BlueCircle7.png" id="26_khphd"]
+[ext_resource type="Texture2D" uid="uid://b8d8m776hdjat" path="res://Assets/photos/BlueCircle8.png" id="27_g4yo4"]
+[ext_resource type="Texture2D" uid="uid://dpvupi6hd6jbd" path="res://Assets/photos/BlueCircle9.png" id="28_im7ls"]
+[ext_resource type="Texture2D" uid="uid://c5swkob2uus7m" path="res://Assets/photos/BlueCircleB.png" id="29_a34eg"]
+[ext_resource type="Texture2D" uid="uid://ddy73g60kx8to" path="res://Assets/photos/BlueCircleF.png" id="30_via5u"]
+[ext_resource type="FontFile" uid="uid://y8l4ksce18u0" path="res://Assets/Fonts/Roboto-Regular.ttf" id="31_ac6pf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h84dr"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ek63v"]
+radius = 23.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r0du0")
+
+[node name="Board" parent="." instance=ExtResource("1_uu6xs")]
+position = Vector2(205, 156)
+script = ExtResource("3_cm0pq")
+
+[node name="RedPieces" type="Node2D" parent="."]
+position = Vector2(542, 36)
+
+[node name="BlankRed" type="Area2D" parent="RedPieces"]
+position = Vector2(75, 150)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/BlankRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("5_40n85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/BlankRed"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="0Red" type="Area2D" parent="RedPieces"]
+position = Vector2(100, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/0Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("6_gb15f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/0Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="1Red" type="Area2D" parent="RedPieces"]
+position = Vector2(150, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/1Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("7_sph85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/1Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="2Red" type="Area2D" parent="RedPieces"]
+position = Vector2(0, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/2Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("8_o7g6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/2Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="3Red" type="Area2D" parent="RedPieces"]
+position = Vector2(0, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/3Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("9_vi5kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/3Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="4Red" type="Area2D" parent="RedPieces"]
+position = Vector2(50, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/4Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("10_5mkgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/4Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="5Red" type="Area2D" parent="RedPieces"]
+position = Vector2(100, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/5Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("11_3ccbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/5Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="6Red" type="Area2D" parent="RedPieces"]
+position = Vector2(150, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/6Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("12_ny7u2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/6Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="7Red" type="Area2D" parent="RedPieces"]
+position = Vector2(150, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/7Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("13_x3yn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/7Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="8Red" type="Area2D" parent="RedPieces"]
+position = Vector2(100, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/8Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("14_1w2xm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/8Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="9Red" type="Area2D" parent="RedPieces"]
+position = Vector2(50, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/9Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("15_gngx1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/9Red"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="BRed" type="Area2D" parent="RedPieces"]
+position = Vector2(50, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/BRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("16_jt61w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/BRed"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="FRed" type="Area2D" parent="RedPieces"]
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="RedPieces/FRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("17_v8qla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedPieces/FRed"]
+shape = SubResource("CircleShape2D_h84dr")
+
+[node name="BluePieces" type="Node2D" parent="."]
+position = Vector2(539, 381)
+
+[node name="BlankRed" type="Area2D" parent="BluePieces"]
+position = Vector2(75, -50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/BlankRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("18_y1tbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/BlankRed"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="0Red" type="Area2D" parent="BluePieces"]
+position = Vector2(100, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/0Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("19_c2s76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/0Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="1Red" type="Area2D" parent="BluePieces"]
+position = Vector2(150, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/1Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("20_f4ese")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/1Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="2Red" type="Area2D" parent="BluePieces"]
+position = Vector2(0, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/2Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("21_rchyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/2Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="3Red" type="Area2D" parent="BluePieces"]
+position = Vector2(0, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/3Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("22_pljue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/3Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="4Red" type="Area2D" parent="BluePieces"]
+position = Vector2(50, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/4Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("23_nx4yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/4Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="5Red" type="Area2D" parent="BluePieces"]
+position = Vector2(100, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/5Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("24_5tfui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/5Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="6Red" type="Area2D" parent="BluePieces"]
+position = Vector2(150, 50)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/6Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("25_38apo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/6Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="7Red" type="Area2D" parent="BluePieces"]
+position = Vector2(150, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/7Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("26_khphd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/7Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="8Red" type="Area2D" parent="BluePieces"]
+position = Vector2(100, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/8Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("27_g4yo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/8Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="9Red" type="Area2D" parent="BluePieces"]
+position = Vector2(50, 100)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/9Red"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("28_im7ls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/9Red"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="BRed" type="Area2D" parent="BluePieces"]
+position = Vector2(50, 0)
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/BRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("29_a34eg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/BRed"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="FRed" type="Area2D" parent="BluePieces"]
+script = ExtResource("4_oye8v")
+
+[node name="TextureRect" type="TextureRect" parent="BluePieces/FRed"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_via5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePieces/FRed"]
+shape = SubResource("CircleShape2D_ek63v")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="MPHUD" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 545.0
+offset_top = 216.0
+offset_right = 545.0
+offset_bottom = 216.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="MPHUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 16.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MPHUD/Panel"]
+layout_mode = 0
+offset_right = 125.0
+offset_bottom = 58.0
+
+[node name="HostGame" type="Button" parent="MPHUD/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("31_ac6pf")
+text = "Host New Game"
+
+[node name="JoinGame" type="Button" parent="MPHUD/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("31_ac6pf")
+text = "Join as Player 2"
+
+[connection signal="pressed" from="MPHUD/Panel/VBoxContainer/HostGame" to="." method="bocome_host"]
+[connection signal="pressed" from="MPHUD/Panel/VBoxContainer/JoinGame" to="." method="join_as_player_2"]
